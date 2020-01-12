@@ -1,25 +1,25 @@
 pipeline{
 	agent  any
 	stages{
-		stage(“version”){
+		stage('version'){
 			withMaven (maven : ‘M3’){
 				sh ‘mvn --version’
 			}
 			
 		}
-		stage(“clean”){
+		stage('clean'){
 			withMaven (maven : ‘M3’){
 				sh ‘mvn clean’
 			}
 			
 		}
-		stage(“test”){
+		stage('test'){
 			withMaven (maven : ‘M3’){
 				sh ‘mvn test’
 			}
 			
 		}
-		stage(“build”){
+		stage('build'){
 			withMaven (maven : ‘M3’){
 				sh ‘mvn install’
 			}
